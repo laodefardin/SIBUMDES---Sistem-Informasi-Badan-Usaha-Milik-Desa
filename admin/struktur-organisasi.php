@@ -9,11 +9,16 @@ include 'global_header.php';
             <div class="row align-items-center">
                 <div class="col">
                     <h2 class="page-title">
+<<<<<<< HEAD
                         <?= $halaman ?>
+=======
+                        Visi dan Misi
+>>>>>>> 99b95fef8e8f1bdfb71ffbb2383b1c4faaf4c03c
                     </h2>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <?php
                 //menampilkan pesan jika ada pesan
                 if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
@@ -28,6 +33,9 @@ include 'global_header.php';
                 // unset($_SESSION['pesan']);
                 // $cetak_pesan = '';
                 ?>
+=======
+
+>>>>>>> 99b95fef8e8f1bdfb71ffbb2383b1c4faaf4c03c
 
 
         <div class="col-12">
@@ -100,7 +108,11 @@ if (isset($_POST['upload'])) {
         // Proses ubah data ke Database
         $update="UPDATE profil SET isiprofil='$nama_baru' WHERE id_profil = '2'";
         mysqli_query($koneksi, $update) or die(mysqli_error()); // Eksekusi/ Jalankan query dari variabel $update
+<<<<<<< HEAD
         $_SESSION['pesan']='Update';
+=======
+        $_SESSION['pesan']='Foto Berhasil Di Update';
+>>>>>>> 99b95fef8e8f1bdfb71ffbb2383b1c4faaf4c03c
         echo "<script type='text/javascript'>window.location = 'struktur-organisasi'</script>";
         // echo "<meta http-equiv='refresh' content='0; url=index.php'>";
     }

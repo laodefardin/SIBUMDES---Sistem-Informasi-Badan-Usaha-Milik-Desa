@@ -22,8 +22,11 @@
         <script src="../assets/dist/js/tabler.min.js"></script>
 
         <script src="./assets/ckeditor/ckeditor.js"></script>
+<<<<<<< HEAD
         <script src="./assets/sweetalert/sweetalert2.all.min.js"></script>
         <script src="./assets/myscript.js"></script>
+=======
+>>>>>>> 99b95fef8e8f1bdfb71ffbb2383b1c4faaf4c03c
         </body>
 
         </html>

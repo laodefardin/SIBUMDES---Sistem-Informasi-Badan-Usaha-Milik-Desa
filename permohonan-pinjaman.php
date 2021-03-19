@@ -30,13 +30,7 @@ if(isset($_POST['upload'])){
     if (move_uploaded_file($tmp1, $path1)){
         move_uploaded_file($tmp2, $path2);
 
-        $query = 'INSERT INTO permohonan_pinjaman (nama, nokk, alamat, nik, email, nohp, jmlpengajuan, fotousaha, fotoketusaha, tanggal) VALUES ("'.$nama.'","'.$nokk.'", "'.$alamat.'", "'.$nik.'", "'.$email.'", "'.$nohp.'", "'.$jmlpengajuan.'", "'.$barufoto1.'", "'.$barufoto2.'", "'.$date.'" )';
-
-        $proses = $koneksi->query($query);
-        if ($proses){
-            $_SESSION['pesan'] = 'Tambah';
-            echo "<script> document.location.href='./permohonan-pinjaman';</script>";
-        }
+        echo $query = 'INSERT INTO permohonan_pinjaman (nama, nokk, alamat, nik, email, nohp, jmlpengajuan, fotousaha, fotoketusaha, tanggal) VALUES ("'.$nama.'","'.$nokk.'", "'.$alamat.'", "'.$nik.'", "'.$email.'", "'.$nohp.'", "'.$jmlpengajuan.'", "'.$barufoto1.'", "'.$barufoto2.'", "'.$date.'" )';
     }
 }
 ?>
@@ -112,9 +106,9 @@ if(isset($_POST['upload'])){
                                 </div>
                             </div>
                             <br>
-                                <input class="btn btn-primary " name="upload" type="submit" value="Ajukan Permohonan">
-                                <input class="btn btn-danger" id="reset" type="reset" value="Batal"
-                                    onclick="self.history.back()">
+                            <input class="btn btn-primary " name="upload" type="submit" value="Ajukan Permohonan">
+                            <input class="btn btn-danger" id="reset" type="reset" value="Batal"
+                                onclick="self.history.back()">
                         </form>
                     </div>
                 </div>
@@ -122,7 +116,6 @@ if(isset($_POST['upload'])){
 
         </div>
     </div>
-
     <?php
 include 'global_footer.php';
 ?>
