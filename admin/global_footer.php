@@ -16,9 +16,14 @@
         </div>
         </div>
         <!-- Libs JS -->
+        <script src="./assets/jquery/jquery.min.js"></script>
         <script src="../assets/dist/libs/apexcharts/dist/apexcharts.min.js"></script>
         <!-- Tabler Core -->
         <script src="../assets/dist/js/tabler.min.js"></script>
+
+        <script src="./assets/ckeditor/ckeditor.js"></script>
+        <script src="./assets/sweetalert/sweetalert2.all.min.js"></script>
+        <script src="./assets/myscript.js"></script>
         </body>
 
         </html>

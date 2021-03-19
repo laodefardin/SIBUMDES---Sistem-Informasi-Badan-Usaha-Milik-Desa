@@ -1,6 +1,6 @@
 <body class="antialiased">
     <div class="page">
-        <header class="navbar navbar-expand-md navbar-dark d-print-none">
+        <header class="navbar navbar-expand-md navbar-dark bg-primary d-print-none">
             <div class="container-xl">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
                     <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
                                     </span>
                                 </a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item <?php if($halaman == 'Visi Misi' OR $halaman == 'Struktur Organisasi' OR $halaman == 'Badan Pengurus') echo"active" ?> dropdown">
                                 <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
                                     role="button" aria-expanded="false">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block"><svg
@@ -56,13 +56,13 @@
                                 <div class="dropdown-menu">
                                     <div class="dropdown-menu-columns">
                                         <div class="dropdown-menu-column">
-                                            <a class="dropdown-item" href="./empty.html">
+                                            <a class="dropdown-item <?php if($halaman == 'Visi Misi') echo"active" ?>" href="./visi-misi">
                                                 Visi Misi
                                             </a>
-                                            <a class="dropdown-item" href="./accordion.html">
+                                            <a class="dropdown-item <?php if($halaman == 'Struktur Organisasi') echo"active" ?>" href="./struktur-organisasi">
                                                 Struktur Organisasi
                                             </a>
-                                            <a class="dropdown-item" href="./blank.html">
+                                            <a class="dropdown-item <?php if($halaman == 'Badan Pengurus') echo"active" ?>" href="./badan-pengurus">
                                                 Badan Pengurus
                                             </a>
                                             <div class="dropend">
@@ -119,7 +119,7 @@
                                                     Badan Usaha
                                                 </a>
                                                 <div class="dropdown-menu">
-                                                    <a href="#" class="dropdown-item">Ketua</a>
+                                                    <!-- <a href="#" class="dropdown-item">Ketua</a> -->
                                                     <a href="#" class="dropdown-item">Sekretaris</a>
                                                     <a href="#" class="dropdown-item">Bendahara</a>
                                                 </div>
@@ -128,7 +128,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item <?php if($halaman == 'Permohonan Pinjaman' OR $halaman == 'Pelunasan Pinjaman' OR $halaman == 'Kerjasama') echo "active" ?> dropdown">
                                 <a class="nav-link dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown"
                                     role="button" aria-expanded="false">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block"><svg
@@ -145,13 +145,13 @@
                                     </span>
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item <?php if($halaman == 'Permohonan Pinjaman') echo "active" ?>" href="permohonan-pinjaman">
                                         Permohonan Pinjaman
                                     </a>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item <?php if($halaman == 'Pelunasan Pinjaman') echo "active" ?>" href="pelunasan-pinjaman">
                                         Pelunasan Pinjaman
                                     </a>
-                                    <a class="dropdown-item" href=".#">
+                                    <a class="dropdown-item <?php if($halaman == 'Kerjasama') echo "active" ?>" href="kerjasama">
                                         Kerjasama
                                     </a>
                                 </div>
