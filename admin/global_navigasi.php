@@ -1,7 +1,7 @@
 <!-- Sidebar Menu -->
 <div class="collapse navbar-collapse" id="navbar-menu">
     <ul class="navbar-nav pt-lg-3">
-        <li class="nav-item">
+        <li class="nav-item <?php if($halaman == 'dashboard') echo "active" ?>">
             <a class="nav-link" href="index">
                 <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg"
                         class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -16,7 +16,7 @@
                 </span>
             </a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item <?php if($halaman == 'Visi Misi' OR $halaman == 'Struktur Organisasi' OR $halaman == 'Badan Pengurus') echo "active" ?> dropdown">
             <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" role="button"
                 aria-expanded="false">
                 <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg"
@@ -33,16 +33,16 @@
                     Profil
                 </span>
             </a>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu <?php if($halaman == 'Visi Misi' OR $halaman == 'Struktur Organisasi' OR $halaman == 'Badan Pengurus') echo "show" ?>">
                 <div class="dropdown-menu-columns">
                     <div class="dropdown-menu-column">
-                        <a class="dropdown-item" href="./empty.html">
+                        <a class="dropdown-item <?php if($halaman == 'Visi Misi') echo "active" ?>" href="./visi-misi">
                             Visi Misi
                         </a>
-                        <a class="dropdown-item" href="./accordion.html">
+                        <a class="dropdown-item <?php if($halaman == 'Struktur Organisasi') echo "active" ?>" href="./struktur-organisasi">
                             Struktur Organisasi
                         </a>
-                        <a class="dropdown-item" href="./blank.html">
+                        <a class="dropdown-item <?php if($halaman == 'Badan Pengurus') echo "active" ?>" href="./badan-pengurus">
                             Badan Pengurus
                         </a>
                         
@@ -100,7 +100,7 @@
                                 Badan Usaha
                             </a>
                             <div class="dropdown-menu">
-                                <a href="./sign-in.html" class="dropdown-item">Ketua</a>
+                                <!-- <a href="./sign-in.html" class="dropdown-item">Ketua</a> -->
                                 <a href="./sign-up.html" class="dropdown-item">Sekretaris</a>
                                 <a href="./forgot-password.html" class="dropdown-item">Bendahara</a>
                             </div>
