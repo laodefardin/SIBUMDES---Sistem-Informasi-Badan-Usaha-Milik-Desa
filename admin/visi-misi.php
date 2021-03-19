@@ -9,33 +9,12 @@ include 'global_header.php';
             <div class="row align-items-center">
                 <div class="col">
                     <h2 class="page-title">
-<<<<<<< HEAD
-                    <?= $halaman ?>
-=======
                         <?= $halaman ?>
->>>>>>> 99b95fef8e8f1bdfb71ffbb2383b1c4faaf4c03c
                     </h2>
                 </div>
             </div>
         </div>
 
-<<<<<<< HEAD
-        <?php
-                //menampilkan pesan jika ada pesan
-                if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
-
-                    $pesan = $_SESSION['pesan'];
-
-                    echo '<div class="flash-data" data-flashdata="' . $_SESSION['pesan'] . '"></div>';
-                }
-                //mengatur session pesan menjadi kosong
-
-                $_SESSION['pesan'] = '';
-                // unset($_SESSION['pesan']);
-                // $cetak_pesan = '';
-                ?>
-=======
->>>>>>> 99b95fef8e8f1bdfb71ffbb2383b1c4faaf4c03c
 
 
         <div class="col-12">

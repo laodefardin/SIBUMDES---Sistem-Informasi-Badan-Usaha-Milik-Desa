@@ -14,7 +14,7 @@ include 'global_header.php';
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
+
         <?php
                 //menampilkan pesan jika ada pesan
                 if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
@@ -29,9 +29,6 @@ include 'global_header.php';
                 // unset($_SESSION['pesan']);
                 // $cetak_pesan = '';
                 ?>
-=======
-
->>>>>>> 99b95fef8e8f1bdfb71ffbb2383b1c4faaf4c03c
 
 
         <div class="col-12">
