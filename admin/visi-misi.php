@@ -14,7 +14,14 @@ include 'global_header.php';
                 </div>
             </div>
         </div>
-
+        <?php
+                //menampilkan pesan jika ada pesan
+                if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
+                    $pesan = $_SESSION['pesan'];
+                    echo '<div class="flash-data" data-flashdata="' . $_SESSION['pesan'] . '"></div>';
+                }
+                $_SESSION['pesan'] = '';
+                ?>
 
 
         <div class="col-12">
@@ -56,7 +63,7 @@ if (isset($_POST['tambah'])){
 $update = $koneksi->query("UPDATE profil SET isiprofil = '".$visimisi."' WHERE id_profil = '1'  ");
 $_SESSION['pesan'] = 'Ubah';
 echo "<script> document.location.href='./visi-misi';</script>";
-
+exit;
 }
 ?>
 <?php

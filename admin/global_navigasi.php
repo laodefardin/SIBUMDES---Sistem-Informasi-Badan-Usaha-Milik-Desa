@@ -109,7 +109,7 @@
                 </div>
             </div>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item <?php if($halaman == 'Permohonan Pinjaman' OR $halaman == 'Pelunasan Pinjaman' OR $halaman == 'Kerjasama') echo "active" ?> dropdown">
             <a class="nav-link dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown" role="button"
                 aria-expanded="false">
                 <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg"
@@ -124,20 +124,20 @@
                     Layanan
                 </span>
             </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="./activity.html">
+            <div class="dropdown-menu <?php if($halaman == 'Permohonan Pinjaman' OR $halaman == 'Pelunasan Pinjaman' OR $halaman == 'Kerjasama') echo "show" ?>" >
+                <a class="dropdown-item <?php if($halaman == 'Permohonan Pinjaman') echo "active" ?>" href="./permohonan-pinjaman">
                     Permohonan Pinjaman
                 </a>
-                <a class="dropdown-item" href="./gallery.html">
+                <a class="dropdown-item <?php if($halaman == 'Pelunasan Pinjaman') echo "active" ?>" href="./pelunasan-pinjaman">
                     Pelunasan Pinjaman
                 </a>
-                <a class="dropdown-item" href="./invoice.html">
+                <a class="dropdown-item <?php if($halaman == 'Kerjasama') echo "active" ?>" href="./kerjasama">
                     Kerjasama
                 </a>
             </div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./docs/index.html">
+        <li class="nav-item  <?php if($halaman == 'Kegiatan') echo "active" ?>">
+            <a class="nav-link" href="./kegiatan">
                 <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg"
                         class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                         fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -166,25 +166,23 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
                     aria-label="Open user menu">
-                    <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>
+                    <span class="avatar avatar-sm" style="background-image: url(./img/user/<?= $gambar ?>)"></span>
                     <div class="d-none d-xl-block ps-2">
-                        <div>Paweł Kuna</div>
-                        <div class="mt-1 small text-muted">UI Designer</div>
+                        <div><?= $namalengkap; ?></div>
+                        <div class="mt-1 small text-muted"><?= $level; ?></div>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <a href="#" class="dropdown-item">Set status</a>
-                    <a href="#" class="dropdown-item">Profile & account</a>
-                    <a href="#" class="dropdown-item">Feedback</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">Settings</a>
+                    <a href="./gantipassword" class="dropdown-item">Ganti Password</a>
+                    <a href="./uploadfoto" class="dropdown-item">Ganti Foto Profil</a>
+                    <a href="./setting" class="dropdown-item">Settings</a>
                     <a href="../logout.php" class="dropdown-item">Logout</a>
                 </div>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbar-menu">
             <div>
-                <form action="." method="get">
+                <!-- <form action="." method="get">
                     <div class="input-icon">
                         <span class="input-icon-addon">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
@@ -196,7 +194,7 @@
                         </span>
                         <input type="text" class="form-control" placeholder="Search…" aria-label="Search in website">
                     </div>
-                </form>
+                </form> -->
             </div>
         </div>
     </div>

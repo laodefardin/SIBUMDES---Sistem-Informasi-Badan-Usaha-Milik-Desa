@@ -17,6 +17,13 @@ include 'global_navigasi.php';
             </div>
         </div>
 
+        <?php
+                if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
+                    $pesan = $_SESSION['pesan'];
+                    echo '<div class="flash-data" data-flashdata="' . $_SESSION['pesan'] . '"></div>';
+                }
+                $_SESSION['pesan'] = '';
+                ?>
 
         <div class="row justify-content-center">
             <div class="col-lg-10 col-xl-9">
@@ -30,7 +37,7 @@ include 'global_navigasi.php';
                                 <div class="col-xl-6">
                                     <div class="mb-3">
                                         <label class="form-label required">Nama Kelompok Usaha</label>
-                                        <input type="text" class="form-control" name="nama"
+                                        <input type="text" class="form-control" name="namausaha"
                                             placeholder="Masukkan nama kelompok usaha">
                                     </div>
                                     <div class="mb-3">
@@ -47,7 +54,7 @@ include 'global_navigasi.php';
                                     <div class="mb-3">
                                         <label class="form-label required">Kegiatan Usaha</label>
                                         <input type="text" class="form-control" name="kegiatanusaha"
-                                            placeholder="Masukkan nomor nik ">
+                                            placeholder="Masukkan kegiatan usaha">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label required">Email Usaha</label>
@@ -68,6 +75,35 @@ include 'global_navigasi.php';
         </div>
     </div>
 
+    <?php include 'global_footer.php'; ?>
     <?php
-include 'global_footer.php';
+if(isset($_POST['upload'])){
+    $date = date('d-M-Y');
+    $namausaha = htmlentities(strip_tags(trim($_POST['namausaha'])));
+    $kegiatanusaha = htmlentities(strip_tags(trim($_POST['kegiatanusaha'])));
+    $email = htmlentities(strip_tags(trim($_POST['email'])));
+
+    $proposalusaha = htmlentities(strip_tags(trim($_FILES['proposalusaha']['name'])));
+    $tmpproposalusaha = htmlentities(strip_tags(trim($_FILES['proposalusaha']['tmp_name'])));
+    $baruproposalusaha = date('dYHiS').$proposalusaha;
+    $path1 = "./img/proposalusaha/".$baruproposalusaha;
+
+
+    $foto = htmlentities(strip_tags(trim($_FILES['foto']['name'])));
+    $tmp = htmlentities(strip_tags(trim($_FILES['foto']['tmp_name'])));
+    $barufoto = $namausaha.date('dYHiS').$foto;
+    $path2 = "./img/proposalusaha/".$barufoto;
+
+    if (move_uploaded_file($tmpproposalusaha, $path1)){
+        move_uploaded_file($tmp, $path2);
+
+    echo $query = 'INSERT INTO kerjasama (namausaha, proposalusaha, foto, kegiatanusaha, email, tanggal) VALUES ("'.$namausaha.'", "'.$baruproposalusaha.'","'.$barufoto.'","'.$kegiatanusaha.'","'.$email.'", "'.$date.'") ';
+
+    $proses = $koneksi->query($query);
+    if ($proses){
+        $_SESSION['pesan'] = 'Tambah';
+        echo "<script> document.location.href='./kerjasama';</script>";
+    }
+    }
+}
 ?>

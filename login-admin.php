@@ -49,6 +49,7 @@ if (isset($_POST["submit"])) {
     $_SESSION["level"] = $akun["level"];
     $_SESSION["id_user"] = $akun['user_id'];
     $_SESSION['gambar'] = $akun['gambar'];
+    $_SESSION['nama_lengkap'] = $akun['nama_lengkap'];
     echo "<script> document.location.href='admin/index'; </script>";
 
   }else{

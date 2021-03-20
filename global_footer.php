@@ -20,10 +20,23 @@
   </footer>
   </div>
   </div>
+  <script src="./admin/assets/jquery/jquery.min.js"></script>
   <script src="./assets/dist/libs/apexcharts/dist/apexcharts.min.js"></script>
   <!-- Tabler Core -->
   <script src="./assets/dist/js/tabler.min.js"></script>
+  <script src="./admin/assets/ckeditor/ckeditor.js"></script>
+      
+  <script src="./admin/assets/sweetalert/sweetalert2.all.min.js"></script>
+  <script src="./admin/assets/myscript.js"></script>
+  <script>
+    function hanyaAngka(evt) {
+      var charCode = (evt.which) ? evt.which : event.keyCode
+      if (charCode > 31 && (charCode < 48 || charCode > 57))
 
+        return false;
+      return true;
+    }
+  </script>
   </body>
 
   </html>

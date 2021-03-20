@@ -7,6 +7,8 @@ if (!isset($_SESSION["username"])){
 
 $user = $_SESSION['username'];
 $level = $_SESSION['level'];
+$namalengkap = $_SESSION['nama_lengkap'];
+$gambar = $_SESSION['gambar'];
 
 $query = $koneksi->query("SELECT * FROM user WHERE username = '$user'");
 $row = $query->fetch_array();
@@ -39,6 +41,8 @@ if ($level === "Karyawan"){
   <link href="../assets/dist/css/tabler-payments.min.css" rel="stylesheet" />
   <link href="../assets/dist/css/tabler-vendors.min.css" rel="stylesheet" />
   <link href="../assets/dist/css/demo.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="./assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 </head>
 
 <body class="antialiased">
@@ -49,7 +53,7 @@ if ($level === "Karyawan"){
           <span class="navbar-toggler-icon"></span>
         </button>
         <h1 class="navbar-brand navbar-brand-autodark">
-          <a href=".">
+          <a href="./index">
             <img src="../img/logo.png" width="150" height="32" alt="Sibumdes" class="navbar-brand-image">
           </a>
         </h1>

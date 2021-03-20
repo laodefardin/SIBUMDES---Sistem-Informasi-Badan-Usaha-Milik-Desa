@@ -156,8 +156,8 @@
                                     </a>
                                 </div>
                             </li>
-                            <li class="nav-item <?php if($halaman == 'kegiatan') echo "active" ?>">
-                                <a class="nav-link" href="index">
+                            <li class="nav-item <?php if($halaman == 'Kegiatan') echo "active" ?>">
+                                <a class="nav-link" href="kegiatan">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block"><svg
                                             xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -175,7 +175,7 @@
                             </li>
                         </ul>
                         <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
-                            <form action="." method="get">
+                            <!-- <form action="." method="get">
                                 <div class="input-icon">
                                     <span class="input-icon-addon">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
@@ -188,7 +188,7 @@
                                     <input type="text" class="form-control" placeholder="Search…"
                                         aria-label="Search in website">
                                 </div>
-                            </form>
+                            </form> -->
                         </div>
                     </div>
                 </div>

@@ -17,6 +17,13 @@ include 'global_navigasi.php';
             </div>
         </div>
 
+                <?php
+                if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
+                    $pesan = $_SESSION['pesan'];
+                    echo '<div class="flash-data" data-flashdata="' . $_SESSION['pesan'] . '"></div>';
+                }
+                $_SESSION['pesan'] = '';
+                ?>
 
         <div class="row justify-content-center">
             <div class="col-lg-10 col-xl-9">
@@ -31,16 +38,16 @@ include 'global_navigasi.php';
                                     <div class="mb-3">
                                         <label class="form-label required">Nama Lengkap</label>
                                         <input type="text" class="form-control" name="nama"
-                                            placeholder="Masukkan nama anda">
+                                            placeholder="Masukkan nama anda" required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label required">Pembayaran Ke</label>
                                         <input type="text" class="form-control" name="pembayaran"
-                                            placeholder="Masukkan Pembayaran ke - ">
+                                            placeholder="Masukkan Pembayaran ke - " required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label required">lanjut Pinjaman</label>
-                                        <select name="user[month]" class="form-select">
+                                        <select name="lanjutpinjam" class="form-select" required>
                                             <option value="Ya">Ya</option>
                                             <option value="Tidak">Tidak</option>
                                         </select>
@@ -50,13 +57,13 @@ include 'global_navigasi.php';
                                 <div class="col-xl-6">
                                     <div class="mb-3">
                                         <label class="form-label required">NIK</label>
-                                        <input type="text" class="form-control" name="nik"
-                                            placeholder="Masukkan nomor nik ">
+                                        <input type="text" class="form-control" onkeypress="return hanyaAngka(event)" maxlength="16" name="nik"
+                                            placeholder="Masukkan nomor nik " required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label required">Sisa Pinjaman</label>
-                                        <input type="text" class="form-control" name="email"
-                                            placeholder="Masukkan Sisa Pinjaman">
+                                        <input type="text" class="form-control" onkeypress="return hanyaAngka(event)" name="sisapinjaman"
+                                            placeholder="Masukkan Sisa Pinjaman" required>
                                     </div>
                                 </div>
                             </div>
@@ -72,6 +79,23 @@ include 'global_navigasi.php';
         </div>
     </div>
 
-    <?php
-include 'global_footer.php';
+<?php include 'global_footer.php'; ?>
+
+<?php
+if (isset($_POST['upload'])){
+    $date = date('d-M-Y');
+    $nama = htmlentities(strip_tags(trim($_POST['nama'])));
+    $pembayaran = htmlentities(strip_tags(trim($_POST['pembayaran'])));
+    $lanjutpinjam = htmlentities(strip_tags(trim($_POST['lanjutpinjam'])));
+    $nik = htmlentities(strip_tags(trim($_POST['nik'])));
+    $sisapinjaman = htmlentities(strip_tags(trim($_POST['sisapinjaman'])));
+
+    echo $query = 'INSERT INTO pelunasan_pinjaman (nama, bayarke, lanjutpinjam, nik, sisapinjam, tanggal) VALUES ("'.$nama.'", "'.$pembayaran.'","'.$lanjutpinjam.'","'.$nik.'","'.$sisapinjaman.'","'.$date.'") ';
+
+    $proses = $koneksi->query($query);
+    if ($proses){
+        $_SESSION['pesan'] = 'Tambah';
+        echo "<script> document.location.href='./pelunasan-pinjaman';</script>";
+    }
+}
 ?>
