@@ -16,4 +16,6 @@ include 'koneksi.php';
     <link href="./assets/dist/css/tabler-payments.min.css" rel="stylesheet"/>
     <link href="./assets/dist/css/tabler-vendors.min.css" rel="stylesheet"/>
     <link href="./assets/dist/css/demo.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./admin/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="./admin/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   </head>

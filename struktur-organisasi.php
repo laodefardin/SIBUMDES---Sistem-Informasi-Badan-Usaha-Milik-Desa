@@ -33,6 +33,20 @@ include 'global_navigasi.php';
                     <?php } ?>
                     <?php } ?>
                     </div>
+                
+        
+    
+
+        
+            
+                    <div class="card-body">
+                        <?php
+            $query = $koneksi->query("SELECT * FROM profil WHERE id_profil = '3'");
+            foreach ($query as $data):
+            
+            echo $data['isiprofil'];
+            endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>

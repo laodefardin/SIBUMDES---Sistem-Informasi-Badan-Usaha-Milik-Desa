@@ -1,5 +1,5 @@
 <?php
-$halaman = 'Kegiatan';
+$halaman = 'Tambah Kegiatan';
 include 'global_header.php';
 ?>
 
@@ -9,7 +9,7 @@ include 'global_header.php';
             <div class="row align-items-center">
                 <div class="col">
                     <h2 class="page-title">
-                        Tambah <?= $halaman ?>
+                        <?= $halaman ?>
                     </h2>
                 </div>
             </div>
@@ -28,11 +28,11 @@ include 'global_header.php';
                                     <div class="row">
                                         <div class="col-xl-2">
                                             <div class="mb-6">
-                                                <div class="form-label required">Foto Kegiatan</div>
+                                                <label class="form-label required">Foto Kegiatan</label>
                                                 <input type="file" class="form-control" name="fotokegiatan" required>
                                             </div>
                                             <div class="mb-6">
-                                                <div class="form-label required">Tanggal Kegiatan</div>
+                                                <label class="form-label required">Tanggal Kegiatan</label>
                                                 <input type="date" class="form-control" name="tanggal" required>
                                             </div>
                                         </div>
@@ -43,7 +43,7 @@ include 'global_header.php';
                                                     placeholder="Masukkan judul kegiatan" required>
                                             </div>
                                             <div class="mb-6">
-                                                <div class="form-label required">Isi Kegiatan</div>
+                                                <label class="form-label required">Isi Kegiatan</label>
                                                 <textarea class="ckeditor" id="ckeditor2" name="isikegiatan" rows="7"
                                                     placeholder="Content.."></textarea>
                                             </div>

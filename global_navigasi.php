@@ -1,26 +1,30 @@
 <body class="antialiased">
     <div class="page">
-        <header class="navbar navbar-expand-md navbar-dark bg-primary d-print-none">
+        <header class="navbar navbar-expand-md navbar-dark navbar-overlap d-print-none">
             <div class="container-xl">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
                     <a href=".">
-                        <img src="./img/logo.png" width="150" height="32" alt="Sibumdes"
-                            class="navbar-brand-image">
+                        <img src="./img/logo.png" width="150" height="32" alt="Sibumdes" class="navbar-brand-image">
                     </a>
                 </h1>
-
+                          <div class="navbar-nav flex-row order-md-last">
+         
+            <div class="nav-item dropdown">
+              <a href="./login-admin" class="nav-link d-flex lh-1 text-reset p-0">
+                <div class="d-none d-xl-block ps-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M20 12h-13l3 -3m0 6l-3 -3" /></svg> Log in
+                </div>
+              </a>
             </div>
-        </header>
-        <div class="navbar-expand-md">
-            <div class="collapse navbar-collapse" id="navbar-menu">
-                <div class="navbar navbar-light">
-                    <div class="container-xl">
+          </div>
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
                         <ul class="navbar-nav">
-                            <li class="nav-item <?php if($halaman == 'index') echo "active" ?>">
-                                <a class="nav-link" href="index">
+                            <li class="nav-item">
+                                <a class="nav-link <?php if($halaman == 'index') echo "active" ?>" href="./index">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block"><svg
                                             xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -35,7 +39,8 @@
                                     </span>
                                 </a>
                             </li>
-                            <li class="nav-item <?php if($halaman == 'Visi Misi' OR $halaman == 'Struktur Organisasi' OR $halaman == 'Badan Pengurus') echo"active" ?> dropdown">
+                            <li
+                                class="nav-item <?php if($halaman == 'Visi Misi' OR $halaman == 'Struktur Organisasi' OR $halaman == 'Badan Pengurus') echo"active" ?> dropdown">
                                 <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
                                     role="button" aria-expanded="false">
                                     <span class="nav-link-icon d-md-none d-lg-inline-block"><svg
@@ -56,24 +61,26 @@
                                 <div class="dropdown-menu">
                                     <div class="dropdown-menu-columns">
                                         <div class="dropdown-menu-column">
-                                            <a class="dropdown-item <?php if($halaman == 'Visi Misi') echo"active" ?>" href="./visi-misi">
+                                            <a class="dropdown-item <?php if($halaman == 'Visi Misi') echo"active" ?>"
+                                                href="./visi-misi">
                                                 Visi Misi
                                             </a>
-                                            <a class="dropdown-item <?php if($halaman == 'Struktur Organisasi') echo"active" ?>" href="./struktur-organisasi">
+                                            <a class="dropdown-item <?php if($halaman == 'Struktur Organisasi') echo"active" ?>"
+                                                href="./struktur-organisasi">
                                                 Struktur Organisasi
                                             </a>
-                                            <a class="dropdown-item <?php if($halaman == 'Badan Pengurus') echo"active" ?>" href="./badan-pengurus">
+                                            <!-- <a class="dropdown-item <?php if($halaman == 'Badan Pengurus') echo"active" ?>" href="./badan-pengurus">
                                                 Badan Pengurus
-                                            </a>
+                                            </a> -->
                                             <div class="dropend">
                                                 <a class="dropdown-item dropdown-toggle" href="#sidebar-error"
                                                     data-bs-toggle="dropdown" role="button" aria-expanded="false">
                                                     Anggota
                                                 </a>
                                                 <div class="dropdown-menu">
-                                                    <a href="#" class="dropdown-item">KSP</a>
-                                                    <a href="#" class="dropdown-item">Pertamini</a>
-                                                    <a href="#" class="dropdown-item">Kuliner</a>
+                                                    <a href="anggota-ksp" class="dropdown-item">KSP</a>
+                                                    <a href="anggota-pertamini" class="dropdown-item">Pertamini</a>
+                                                    <a href="anggota-kuliner" class="dropdown-item">Kuliner</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -108,22 +115,15 @@
                                                     Unit Usaha
                                                 </a>
                                                 <div class="dropdown-menu">
-                                                    <za href="#" class="dropdown-item">KSP</za>
-                                                    <a href="#" class="dropdown-item">Pertamini</a>
-                                                    <a href="#" class="dropdown-item">Kuliner</a>
+                                                    <a href="ksp" class="dropdown-item">KSP</a>
+                                                    <a href="pertamini" class="dropdown-item">Pertamini</a>
+                                                    <a href="kuliner" class="dropdown-item">Kuliner</a>
                                                 </div>
                                             </div>
-                                            <div class="dropend">
-                                                <a class="dropdown-item dropdown-toggle" href="#sidebar-error"
-                                                    data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                                                    Badan Usaha
-                                                </a>
-                                                <div class="dropdown-menu">
-                                                    <!-- <a href="#" class="dropdown-item">Ketua</a> -->
-                                                    <a href="#" class="dropdown-item">Sekretaris</a>
-                                                    <a href="#" class="dropdown-item">Bendahara</a>
-                                                </div>
-                                            </div>
+                                            <a class="dropdown-item "
+                                                href="./badan-usaha">
+                                                Badan Usaha
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -174,23 +174,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
-                            <!-- <form action="." method="get">
-                                <div class="input-icon">
-                                    <span class="input-icon-addon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <circle cx="10" cy="10" r="7" />
-                                            <line x1="21" y1="21" x2="15" y2="15" /></svg>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Search…"
-                                        aria-label="Search in website">
-                                </div>
-                            </form> -->
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </header>

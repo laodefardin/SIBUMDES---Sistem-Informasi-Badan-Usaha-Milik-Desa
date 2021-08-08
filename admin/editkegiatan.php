@@ -87,7 +87,7 @@ if (isset($_POST['tambah'])){
     if(empty($fotokegiatan)){
         echo $update = "UPDATE kegiatan SET judul='".$judul."', isi='".$isikegiatan."', tanggal='".$tanggal."' WHERE id_kegiatan = '".$id."' ";
 
-        $sql = mysql_query($koneksi, $update);
+        $sql = mysqli_query($koneksi, $update);
         $_SESSION['pesan'] = 'Ubah';
         echo "<script> document.location.href='./kegiatan';</script>";
     }else{
@@ -97,12 +97,13 @@ if (isset($_POST['tambah'])){
         $hapus_gambar = "./img/kegiatan/".$lokasi;
         unlink($hapus_gambar);
 
-        move_uploaded_file($_FILES['fotokegiatan']['tmp_name'], './img/kegiatan/'.$fotokegiatan);
+        $foto = date('dYHiS').$fotokegiatan;
+        move_uploaded_file($_FILES['fotokegiatan']['tmp_name'], './img/kegiatan/'.$foto);
 
-        echo $update = "UPDATE kegiatan SET  judul='".$judul."', isi='".$isikegiatan."', gambar='".$fotokegiatan."', tanggal='".$tanggal."' WHERE id_kegiatan = '".$id."' ";
+        echo $update = "UPDATE kegiatan SET  judul='".$judul."', isi='".$isikegiatan."', gambar='".$foto."', tanggal='".$tanggal."' WHERE id_kegiatan = '".$id."' ";
         
         $sql = mysqli_query($koneksi, $update) or die(mysqli_error($koneksi));
-        if ($proses){
+        if ($sql){
         $_SESSION['pesan'] = 'Ubah';
         echo "<script> document.location.href='./kegiatan';</script>";
         exit;

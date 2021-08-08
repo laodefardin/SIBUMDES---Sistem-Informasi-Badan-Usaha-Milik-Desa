@@ -1,6 +1,7 @@
 <?php
 $halaman = 'Permohonan Pinjaman';
 include 'global_header.php';
+include 'lib.php';
 ?>
 <div class="content">
     <div class="container-xl">
@@ -32,7 +33,9 @@ include 'global_header.php';
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Validasi</th>
                                             <th>Nama Lengkap</th>
+                                            <th>Email</th>
                                             <th>NIK</th>
                                             <th>No Kartu Keluarga</th>
                                             <th>No HP</th>
@@ -40,7 +43,6 @@ include 'global_header.php';
                                             <th>Foto Usaha</th>
                                             <th>Surat Keterangan Usaha</th>
                                             <th>Alamat</th>
-                                            <th>Email</th>
                                             <th>Tanggal</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -52,15 +54,26 @@ include 'global_header.php';
                                         foreach ($query as $data): ?>
                                         <tr>
                                             <td><?= $nomor; ?></td>
+                                            <td>
+                                                <?php
+                                                if ($data['validasi'] == NULL) {?>
+                                                <a href="sendterima?id=<?= $data['id_perpinjaman']; ?>" class="btn btn-sm btn-primary w-100">Terima</a> <br>
+                                                <a href="sendtolak?id=<?= $data['id_perpinjaman']; ?>" class="btn btn-sm btn-danger w-100">Tolak</a>
+                                                <?php }elseif($data['validasi'] == 'Diterima'){?>
+                                                    <span>Diterima</span>
+                                                <?php }else{ ?>
+                                                    <span>Ditolak</span>
+                                                <?php } ?>
+                                            </td>
                                             <td><?= $data['nama']; ?></td>
+                                            <td><?= $data['email']; ?></td>
                                             <td><?= $data['nik'] ?></td>
                                             <td><?= $data['nokk']; ?></td>
                                             <td><?= $data['nohp']; ?></td>
-                                            <td><?= $data['jmlpengajuan']; ?></td>
+                                            <td><?= rupiah2($data['jmlpengajuan']); ?></td>
                                             <td><a href="../img/fotousaha/<?= $data['fotousaha']; ?>" target="_blank" rel="noopener noreferrer">Lihat</a></td>
                                             <td><a href="../img/fotoketeranganusaha/<?= $data['fotoketusaha']; ?>" target="_blank" rel="noopener noreferrer">Lihat</a></td>
                                             <td><?= $data['alamat']; ?></td>
-                                            <td><?= $data['email']; ?></td>
                                             <td><?= $data['tanggal'];?></td>
                                             <td>
                                             <a class="icon" href="hapuspermohonanpinjaman?id=<?= $data['id_perpinjaman']; ?>"

@@ -16,7 +16,7 @@
                 </span>
             </a>
         </li>
-        <li class="nav-item <?php if($halaman == 'Visi Misi' OR $halaman == 'Struktur Organisasi' OR $halaman == 'Badan Pengurus') echo "active" ?> dropdown">
+        <li class="nav-item <?php if($halaman == 'Visi Misi' OR $halaman == 'Struktur Organisasi' OR $halaman == 'Anggota Pertamini' OR $halaman == 'Anggota KSP' OR $halaman == 'Badan Pengurus') echo "active" ?> dropdown">
             <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" role="button"
                 aria-expanded="false">
                 <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@
                     Profil
                 </span>
             </a>
-            <div class="dropdown-menu <?php if($halaman == 'Visi Misi' OR $halaman == 'Struktur Organisasi' OR $halaman == 'Badan Pengurus') echo "show" ?>">
+            <div class="dropdown-menu <?php if($halaman == 'Visi Misi' OR $halaman == 'Anggota KSP' OR $halaman == 'Anggota Pertamini' OR $halaman == 'Struktur Organisasi' OR $halaman == 'Input Anggota' OR $halaman == 'Badan Pengurus') echo "show" ?>">
                 <div class="dropdown-menu-columns">
                     <div class="dropdown-menu-column">
                         <a class="dropdown-item <?php if($halaman == 'Visi Misi') echo "active" ?>" href="./visi-misi">
@@ -42,21 +42,21 @@
                         <a class="dropdown-item <?php if($halaman == 'Struktur Organisasi') echo "active" ?>" href="./struktur-organisasi">
                             Struktur Organisasi
                         </a>
-                        <a class="dropdown-item <?php if($halaman == 'Badan Pengurus') echo "active" ?>" href="./badan-pengurus">
+                        <!-- <a class="dropdown-item <?php if($halaman == 'Badan Pengurus') echo "active" ?>" href="./adan-pengurus">
                             Badan Pengurus
-                        </a>
+                        </a> -->
                         
                     </div>
                     <div class="dropdown-menu-column">
                         <div class="dropend">
-                            <a class="dropdown-item dropdown-toggle" href="#sidebar-authentication"
+                            <a class="dropdown-item dropdown-toggle <?php if ($halaman == 'Input Anggota' OR $halaman == 'Anggota Pertamini') echo 'show' ?>" href="#sidebar-authentication"
                                 data-bs-toggle="dropdown" role="button" aria-expanded="false">
                                 Anggota
                             </a>
                             <div class="dropdown-menu">
-                                <a href="./sign-in.html" class="dropdown-item">KSP</a>
-                                <a href="./sign-up.html" class="dropdown-item">Pertamini</a>
-                                <a href="./forgot-password.html" class="dropdown-item">Kuliner</a>
+                                <a href="anggota" class="dropdown-item <?php if($halaman == 'Input Anggota') echo "active" ?>">KSP</a>
+                                <a href="./anggota-pertamini" class="dropdown-item <?php if($halaman == 'Anggota Pertamini') echo "active"?>">Pertamini</a>
+                                <a href="./anggota-kuliner" class="dropdown-item">Kuliner</a>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
             </div>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" role="button"
+            <a class="nav-link dropdown-toggle <?php if($halaman == 'KSP 1%') echo "show" ?>" href="#navbar-base" data-bs-toggle="dropdown" role="button"
                 aria-expanded="false">
                 <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg"
                         class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -80,31 +80,24 @@
                     Laporan
                 </span>
             </a>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu <?php if($halaman == 'KSP 1%' OR $halaman == 'KSP 1.5%') echo "show" ?>">
                 <div class="dropdown-menu-columns">
-                    <div class="dropdown-menu-column">
+                    <div class="dropdown-menu-column ">
                         <div class="dropend">
-                            <a class="dropdown-item dropdown-toggle" href="#sidebar-authentication"
+                            <a class="dropdown-item dropdown-toggle <?php if($halaman == 'KSP 1%'  OR $halaman == 'KSP 1.5%') echo "show" ?>" href="#sidebar-authentication"
                                 data-bs-toggle="dropdown" role="button" aria-expanded="false">
                                 Unit Usaha
                             </a>
-                            <div class="dropdown-menu">
-                                <a href="./sign-in.html" class="dropdown-item">KSP</a>
-                                <a href="./sign-up.html" class="dropdown-item">Pertamini</a>
-                                <a href="./forgot-password.html" class="dropdown-item">Kuliner</a>
+                            <div class="dropdown-menu <?php if($halaman == 'KSP 1%' OR $halaman == 'Input Anggota' OR $halaman == 'Tambah Anggota' OR $halaman == 'KSP 1.5%') echo "show" ?>">
+                                <!-- <a href="./anggota" class="dropdown-item <?php if($halaman == 'Input Anggota' OR $halaman == 'Tambah Anggota') echo "active" ?>">Anggota</a> -->
+                                <!-- <a href="./ksp-1" class="dropdown-item <?php if($halaman == 'KSP 1%') echo "active" ?>">KSP 1%</a> -->
+                                <a href="./ksp-1-5" class="dropdown-item <?php if($halaman == 'KSP') echo "active" ?>">KSP</a>
+                                <a href="./laporan-pertamini" class="dropdown-item">Pertamini</a>
+                                <a href="./laporan-kuliner" class="dropdown-item">Kuliner</a>
                             </div>
                         </div>
-                        <div class="dropend">
-                            <a class="dropdown-item dropdown-toggle" href="#sidebar-authentication"
-                                data-bs-toggle="dropdown" role="button" aria-expanded="false">
-                                Badan Usaha
-                            </a>
-                            <div class="dropdown-menu">
-                                <!-- <a href="./sign-in.html" class="dropdown-item">Ketua</a> -->
-                                <a href="./sign-up.html" class="dropdown-item">Sekretaris</a>
-                                <a href="./forgot-password.html" class="dropdown-item">Bendahara</a>
-                            </div>
-                        </div>
+                        <a class="dropdown-item <?php if($halaman == 'Badan Usaha') echo "active" ?>" href="./badan-usaha">Badan usaha
+                        </a>
                     </div>
                 </div>
             </div>
@@ -136,7 +129,7 @@
                 </a>
             </div>
         </li>
-        <li class="nav-item  <?php if($halaman == 'Kegiatan') echo "active" ?>">
+        <li class="nav-item  <?php if($halaman == 'Kegiatan' OR $halaman == 'Tambah Kegiatan') echo "active" ?>">
             <a class="nav-link" href="./kegiatan">
                 <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg"
                         class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -150,6 +143,23 @@
                 </span>
                 <span class="nav-link-title">
                     Kegiatan
+                </span>
+            </a>
+        </li>
+        <li class="nav-item  <?php if($halaman == 'Manage Slide') echo "active" ?>">
+            <a class="nav-link" href="./manage-slide">
+                <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                        <line x1="9" y1="9" x2="10" y2="9" />
+                        <line x1="9" y1="13" x2="15" y2="13" />
+                        <line x1="9" y1="17" x2="15" y2="17" /></svg>
+                </span>
+                <span class="nav-link-title">
+                    Manage Slide
                 </span>
             </a>
         </li>

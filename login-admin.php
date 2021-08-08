@@ -23,7 +23,6 @@ if (isset($_POST["submit"])) {
   //   $pesan_error .= "Password belum diisi <br>";
   // }
   include("koneksi.php");
-  session_start();
 //filter dengan mysqli_real_escape_string
   $username = $koneksi->escape_string($username);
   $password = $koneksi->escape_string($password);
@@ -66,7 +65,7 @@ else{
   <div class="flex-fill d-flex flex-column justify-content-center py-4">
     <div class="container-tight py-6">
       <div class="text-center mb-4">
-        <a href="."><img src="./static/logo.jpg" height="36" alt=""></a>
+        <a href="."><img src="./img/logo-desa.png" height="200" alt=""></a>
       </div>
       <form class="card card-md" action="" method="POST" autocomplete="off">
         <div class="card-body">
@@ -74,7 +73,7 @@ else{
     // tampilkan pesan jika ada
             if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
               echo '<div class="pesan">
-              <div class="alert alert-warning">  <strong>Warning! </strong>'.$_SESSION['pesan'].'</div></div>';
+              <div class="alert alert-important alert-danger alert-dismissible">  <strong>Warning! </strong>'.$_SESSION['pesan'].'</div></div>';
             }
     // tampilkan pesan error jika ada
             $_SESSION['pesan'] = '';

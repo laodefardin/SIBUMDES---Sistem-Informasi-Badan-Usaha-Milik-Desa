@@ -77,7 +77,7 @@ include 'global_navigasi.php';
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label required">Jumlah Pengajuan</label>
-                                        <input type="text" class="form-control" name="jmlpengajuan"
+                                        <input type="text" class="form-control" name="jmlpengajuan" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);"
                                             placeholder="Masukkan jumlah pengajuan " required>
                                     </div>
                                 </div>
@@ -110,6 +110,7 @@ if(isset($_POST['upload'])){
     $email = htmlentities(strip_tags(trim($_POST['email'])));
     $nohp = htmlentities(strip_tags(trim($_POST['nohp'])));
     $jmlpengajuan = htmlentities(strip_tags(trim($_POST['jmlpengajuan'])));
+    $jmpengajuan = str_replace(".", "", $jmlpengajuan);
 
     $foto1 = htmlentities(strip_tags(trim($_FILES['fotousaha']['name'])));
     $tmp1 = htmlentities(strip_tags(trim($_FILES['fotousaha']['tmp_name'])));
@@ -125,7 +126,7 @@ if(isset($_POST['upload'])){
     if (move_uploaded_file($tmp1, $path1)){
         move_uploaded_file($tmp2, $path2);
 
-        $query = 'INSERT INTO permohonan_pinjaman (nama, nokk, alamat, nik, email, nohp, jmlpengajuan, fotousaha, fotoketusaha, tanggal) VALUES ("'.$nama.'","'.$nokk.'", "'.$alamat.'", "'.$nik.'", "'.$email.'", "'.$nohp.'", "'.$jmlpengajuan.'", "'.$barufoto1.'", "'.$barufoto2.'", "'.$date.'" )';
+        echo $query = 'INSERT INTO permohonan_pinjaman (nama, nokk, alamat, nik, email, nohp, jmlpengajuan, fotousaha, fotoketusaha, tanggal, validasi) VALUES ("'.$nama.'","'.$nokk.'", "'.$alamat.'", "'.$nik.'", "'.$email.'", "'.$nohp.'", "'.$jmpengajuan.'", "'.$barufoto1.'", "'.$barufoto2.'", "'.$date.'","" )';
 
         $proses = $koneksi->query($query);
         if ($proses){
